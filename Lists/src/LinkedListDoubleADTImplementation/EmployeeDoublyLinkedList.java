@@ -10,18 +10,19 @@ public class EmployeeDoublyLinkedList {
 
     //no need of a constructor for initializing values to null (if that's what needed)
     public void addToTheFront(Employee newEmployee) {
+        EmployeeNode newNode = new EmployeeNode(newEmployee);
+        newNode.setNext(head); //even when the list is empty, this will set the newNode's next to null which is perfect!
+
         if (isEmpty()) {
-            EmployeeNode newNode = new EmployeeNode(newEmployee);
-            head = newNode;
             tail = newNode;
-            size++;
+
         } else {
-            EmployeeNode newNode = new EmployeeNode(newEmployee);
-            newNode.setNext(head);
-            head = newNode;
-            head.getNext().setPrevious(newNode);
-            size++;
+//            avoid using multiple traversals
+//            head.getNext().setPrevious(newNode); //BAD
+            head.setPrevious(newNode);
         }
+        head = newNode;
+        size++;
 
     }
 
