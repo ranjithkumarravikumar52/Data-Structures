@@ -3,6 +3,9 @@ package LinkedListADTImplementation;
 public class EmployeeLinkedList {
 
     private EmployeeNode head;
+    private int size; 
+    
+    
 
     public void addToTheFront(Employee employee) {
         EmployeeNode employeeNode = new EmployeeNode(employee);
@@ -10,6 +13,7 @@ public class EmployeeLinkedList {
         employeeNode.setNext(head);
         //link the head to the current node
         head = employeeNode;
+        size++;
     }
     
     public void printList(){
@@ -22,4 +26,10 @@ public class EmployeeLinkedList {
         System.out.print("null\n");
         
     }
+
+    public int getSize() {
+        return size;
+    }
+    
+    
 }

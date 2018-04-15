@@ -15,5 +15,6 @@ public class main {
         list.addToTheFront(djangoJohn);
         
         list.printList();
+        System.out.println(list.getSize());
     }
 }
