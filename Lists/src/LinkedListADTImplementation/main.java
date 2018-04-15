@@ -9,10 +9,15 @@ public class main {
         Employee djangoJohn = new Employee("Django", "John", 4);
         
         EmployeeLinkedList list = new EmployeeLinkedList();
+        
+        System.out.println("Is list empty: "+list.isEmpty());
+        
         list.addToTheFront(janeDoe);
         list.addToTheFront(janyDoy);
         list.addToTheFront(randoDoer);
         list.addToTheFront(djangoJohn);
+        
+        System.out.println("Is list empty: "+list.isEmpty());
         
         list.printList();
         System.out.println(list.getSize());

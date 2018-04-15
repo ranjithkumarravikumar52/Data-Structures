@@ -31,5 +31,9 @@ public class EmployeeLinkedList {
         return size;
     }
     
+    public boolean isEmpty(){
+        return head == null; 
+    }
+    
     
 }
