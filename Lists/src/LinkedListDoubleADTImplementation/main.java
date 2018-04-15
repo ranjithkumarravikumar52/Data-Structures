@@ -12,23 +12,27 @@ public class main {
 
         EmployeeDoublyLinkedList list = new EmployeeDoublyLinkedList();
 
-//        System.out.println("Is list empty: "+list.isEmpty());
-//        list.addToTheFront(janeDoe);
-//        list.addToTheFront(janyDoy);
-//        list.addToTheFront(randoDoer);
-//        list.addToTheFront(djangoJohn);
+        System.out.println("Is list empty: " + list.isEmpty());
+        list.addToTheFront(janeDoe);
+        list.addToTheFront(janyDoy);
+        list.addToTheFront(randoDoer);
+        list.addToTheFront(djangoJohn);
 
-        list.addToTheEnd(janeDoe);
-        list.addToTheEnd(janyDoy);
-        list.addToTheEnd(randoDoer);
-        list.addToTheEnd(djangoJohn);
-        
         list.printList();
-        System.out.println("Elements in the list "+list.getSize());
-        
-        
+        System.out.println("Elements in the list " + list.getSize());
 
+//        System.out.println("Removed From the front: "+list.removeFromTheFront());
+//        System.out.println("Removed From the front: "+list.removeFromTheFront());
+//        System.out.println("Removed From the front: "+list.removeFromTheFront());
+//        System.out.println("Removed From the front: "+list.removeFromTheFront());
+//        list.addToTheEnd(janeDoe);
+//        list.addToTheEnd(janyDoy);
+//        list.addToTheEnd(randoDoer);
+//        list.addToTheEnd(djangoJohn);
 
-        
+        System.out.println("Removed from the end: "+list.removeFromTheEnd());
+        list.printList();
+        System.out.println("Elements in the list " + list.getSize());
+
     }
 }
