@@ -26,6 +26,22 @@ public class EmployeeDoublyLinkedList {
 
     }
 
+    public void addToTheEnd(Employee newEmployee) {
+        if (isEmpty()) {
+            EmployeeNode newNode = new EmployeeNode(newEmployee);
+            head = newNode;
+            tail = newNode;
+            size++;
+        } else {
+            EmployeeNode newNode = new EmployeeNode(newEmployee);
+            tail.setNext(newNode);
+            newNode.setPrevious(tail);
+            //no need to newNode.setnext(null)
+            tail = newNode;
+            size++;
+        }
+    }
+
     public EmployeeNode removeFromTheFront() {
         if (this.isEmpty()) {
             return null;
