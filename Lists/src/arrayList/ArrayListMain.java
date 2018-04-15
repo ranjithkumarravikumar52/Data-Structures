@@ -15,15 +15,15 @@ public class ArrayListMain {
         List<Employee> employeeList = new ArrayList<>();
 
         // adding 4 employee objects
-        Employee obj1 = new Employee("Jane", "Doe", 1);
-        Employee obj2 = new Employee("Jany", "Doy", 2);
-        Employee obj3 = new Employee("Rando", "Doer", 3);
-        Employee obj4 = new Employee("Django", "John", 4);
+        Employee janeDoe = new Employee("Jane", "Doe", 1);
+        Employee janyDoy = new Employee("Jany", "Doy", 2);
+        Employee randoDoer = new Employee("Rando", "Doer", 3);
+        Employee djangoJohn = new Employee("Django", "John", 4);
 
-        employeeList.add(obj1);
-        employeeList.add(obj2);
-        employeeList.add(obj3);
-        employeeList.add(obj4);
+        employeeList.add(janeDoe);
+        employeeList.add(janyDoy);
+        employeeList.add(randoDoer);
+        employeeList.add(djangoJohn);
 
         // ArrayList is backed by arrays
         // Similar operations of arrays can be used on ArrayLists too
