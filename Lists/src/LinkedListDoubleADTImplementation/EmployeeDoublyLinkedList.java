@@ -39,13 +39,19 @@ public class EmployeeDoublyLinkedList {
 
     public void printList() {
         EmployeeNode currentNode = head;
-        System.out.print("HEAD -> ");
+        System.out.print("null <- HEAD => ");
         while (currentNode != null) {
-            System.out.print(currentNode + " -> ");
-            currentNode = currentNode.getNext();
+            if (currentNode.getNext() == null) {
+                System.out.print(currentNode);
+                System.out.print("<- null\n");
+                break;
+            } else {
+                System.out.print(currentNode + " <=> ");
+                currentNode = currentNode.getNext();
+            }
+
         }
-        System.out.print("<- TAIL ");
-        System.out.print("<- null\n");
+//        System.out.print("<- TAIL ");
 
     }
 
