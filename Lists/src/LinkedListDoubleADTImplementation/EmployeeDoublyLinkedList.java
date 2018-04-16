@@ -44,8 +44,17 @@ public class EmployeeDoublyLinkedList {
             return null;
         }
         EmployeeNode removedNode = head;
+        
+        //one item in the list
+        if(head.getNext() == null){
+            tail = null;
+        }else{
+            head.getNext().setPrevious(null);
+        }
+        
         head = head.getNext();
         size--;
+        removedNode.setNext(null);
         return removedNode;
     }
     
@@ -54,8 +63,17 @@ public class EmployeeDoublyLinkedList {
             return null;
         }
         EmployeeNode removedNode = tail; 
-        tail = removedNode.getPrevious();
-        tail.setNext(null);
+        
+        //one item in the list
+//        if(tail.getNext() == null){ LMAO!!!! tail's next is always NULL
+        if(tail.getPrevious() == null){
+            head = null;
+        }else{//more than one item in the list
+            tail.getPrevious().setNext(null);
+        }
+        
+        tail = tail.getPrevious();
+        tail.setPrevious(null);
         size--; 
         return removedNode;
     }
