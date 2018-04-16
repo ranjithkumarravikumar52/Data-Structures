@@ -44,37 +44,40 @@ public class IntegerLinkedList {
     }
 
     public void insertSorted(Integer value) {
-        if (isEmpty()) {
+        if (isEmpty() || value <= head.getValue()) {
             addToFront(value);
             return;
         }
 
-        //since this is a singleLinkedList, 
-        //it is easier to find the relative position of the node 
-        //to be inserted after the head node
-        //not before the head node. This will straight off cut the complexity to O(n) from O(n^2)
-        IntegerNode currentNode = head;
-        if (value < currentNode.getValue() && currentNode == head) {
-            addToFront(value);
-            return;
-        }
-        IntegerNode newNode = new IntegerNode(value);
-        while (currentNode != null) {
-            if (value < currentNode.getValue() && value > currentNode.getNext().getValue()) {
-                newNode.setNext(currentNode.getNext());
-                currentNode.setNext(newNode);
-                size++;
-                return;
-            }
-            if (currentNode.getNext() == null) {
-                //add to the end
-                currentNode.setNext(newNode);
-                newNode.setNext(null);
-                size++;
-                return;
-            }
+        //find the insertion point using only head pointer
+//        IntegerNode currentNode = head;
+        IntegerNode currentNode = head.getNext();
+        IntegerNode previousNode = head;
+
+//        while (currentNode != null) {
+//            if (value < currentNode.getValue() && value > currentNode.getNext().getValue()) {
+//                newNode.setNext(currentNode.getNext());
+//                currentNode.setNext(newNode);
+//                size++;
+//                return;
+//            }
+//            if (currentNode.getNext() == null) {
+//                //add to the end
+//                currentNode.setNext(newNode);
+//                newNode.setNext(null);
+//                size++;
+//                return;
+//            }
+//            currentNode = currentNode.getNext();
+//        }
+        while(currentNode != null && currentNode.getValue() < value){
+            previousNode = currentNode;
             currentNode = currentNode.getNext();
         }
+        IntegerNode newNode = new IntegerNode(value);
+        newNode.setNext(currentNode);
+        previousNode.setNext(newNode);
+        size++;
 
     }
 
