@@ -1,6 +1,6 @@
 package vectorList;
 
-import arrayList.Employee;
+import ArrayListADT.Employee;
 import java.util.List;
 import java.util.Vector;
 

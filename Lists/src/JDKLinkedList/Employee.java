@@ -1,4 +1,7 @@
-package arrayList;
+package JDKLinkedList;
+
+import LinkedListDoubleADTImplementation.*;
+import LinkedListADTImplementation.*;
 
 public class Employee {
 
