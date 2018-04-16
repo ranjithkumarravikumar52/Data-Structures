@@ -38,32 +38,37 @@ public class EmployeeDoublyLinkedList {
         // return true if you were able to successfully add the employee
         // into the list before the existing employee. 
         //Return false if the existing employee doesn't exist in the list
-        // add your code here
-        //the node before the exisiting employee before adding is called PreviousEmployee
-        //getting the head/pointer to the exisitingEmployee
-        EmployeeNode currentNode = getIndexOf(existingEmployee);
-        if (currentNode == null) {
+        if (isEmpty()) {
             return false;
         }
-
-        //4 steps to be done
-        //changing the name of the currentEmployee to exisitingEmployee
-        EmployeeNode exisitEmpNode = currentNode;
-        EmployeeNode prevEmpNode = currentNode.getPrevious();
-        if(prevEmpNode == null){
+        
+        //the node before the exisiting employee before adding is called PreviousEmployee
+        //getting the head/pointer to the exisitingEmployee
+        EmployeeNode exisitEmpNode = getIndexOf(existingEmployee);
+        if (exisitEmpNode == null) {//no match 
+            return false;
+        }
+        
+        //checking if the existing node is head node
+        if (exisitEmpNode == head) {
             addToFront(newEmployee);
             return true;
         }
+        
+        //4 steps to be done
         //creating a new employeeNode for the newEmployee
         EmployeeNode newEmpNode = new EmployeeNode(newEmployee);
-        //4. prevEmp.next -> newEmp
-        prevEmpNode.setNext(newEmpNode);
-        //1. newEmp next -> exisitingEmp
-        newEmpNode.setNext(exisitEmpNode);
-        //2. existingEmp prev -> newEmp
-        exisitEmpNode.setPrevious(newEmpNode);
-        //3. newEmp prev -> prevEmp
+        //for readability
+        EmployeeNode prevEmpNode = exisitEmpNode.getPrevious();
+        //1. newEmp prev -> prevEmp
         newEmpNode.setPrevious(prevEmpNode);
+        //2. newEmp next -> exisitingEmp
+        newEmpNode.setNext(exisitEmpNode);
+        //3. prevEmp.next -> newEmp
+        prevEmpNode.setNext(newEmpNode);
+        //4. existingEmp prev -> newEmp
+        exisitEmpNode.setPrevious(newEmpNode);
+        
         //5. increase size
         size++;
 
@@ -72,23 +77,12 @@ public class EmployeeDoublyLinkedList {
     }
 
     public EmployeeNode getIndexOf(Employee existingEmployee) {
-        //empty list do nothing
         if (isEmpty()) {
             return null;
         }
-        //single item is taken care of in the below 2 lines of code
         EmployeeNode currentNode = head;
-        Employee currentEmployee = currentNode.getEmployee();
-        //more than one item
-        while (currentNode != null) {
-            System.out.println("comparing " + existingEmployee + " and " + currentEmployee);
-            if (existingEmployee.equals(currentEmployee)) {
-                System.out.println("Match found: break");
-                return currentNode;
-            } else {
-                currentNode = currentNode.getNext();
-                currentEmployee = currentNode.getEmployee();
-            }
+        while (currentNode != null && !currentNode.getEmployee().equals(existingEmployee)) {
+            currentNode = currentNode.getNext();
         }
         return currentNode;
     }
