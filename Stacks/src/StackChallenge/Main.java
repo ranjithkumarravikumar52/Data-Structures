@@ -20,18 +20,10 @@ public class Main {
 
     public static boolean checkForPalindrome(String string) {
 
-        boolean isPalindrome = true;
+        boolean isPalindrome = true;   
         
-        //0. Get a "clean" string - no punctations or no symbols - only lowercase characters
-        String lowerCaseString = string.toLowerCase();
-        char[] tempCharArray = lowerCaseString.toCharArray(); 
-        StringBuilder cleanString = new StringBuilder(string.length()); 
-        for(char charIndex: tempCharArray){
-            if(charIndex >= 'a' && charIndex <= 'z'){
-                cleanString.append(charIndex);
-            }
-        }
-        string = cleanString.toString();
+        //0. clean up the string
+        string = cleanString(string);
 
         //1. convert the string to character Array
         char[] charArray = string.toCharArray();
@@ -53,5 +45,22 @@ public class Main {
         }
 
         return isPalindrome;
+    }
+
+    public static String cleanString(String string) {
+        //0. Get a "clean" string - no punctations or no symbols or no whiteSpaces or no Uppercase
+        String cleanString = string.toLowerCase();
+        cleanString = cleanString.trim();
+        
+        //ONLY lowercase characters should be present in the clean String
+        char[] charArray = cleanString.toCharArray();
+        StringBuilder onlyLowerCaseCharArray = new StringBuilder(cleanString.length());
+        for(char charIndex: charArray){
+            if(charIndex >= 'a' && charIndex <= 'z'){
+                onlyLowerCaseCharArray.append(charIndex);
+            }
+        }
+        cleanString = onlyLowerCaseCharArray.toString();
+        return cleanString;
     }
 }
