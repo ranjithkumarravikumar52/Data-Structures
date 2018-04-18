@@ -90,7 +90,7 @@ public class CircularQueue {
             queue = newQueue;
             front = 0;
             back = size; //back always point to the next available position to add an element
-            
+
             queue[back++] = newEmployee;
             //[5, 6, 7, 8, 9, 10, _, _, _, _, _]
             size++;
@@ -106,20 +106,29 @@ public class CircularQueue {
     public Employee remove() {
         /*
         Check remove methods for both wrapped case and unwrapped case
-        */
+         */
         if (isEmpty()) {
             throw new NoSuchElementException();
         }
-        
-        Employee removedEmployee = queue[front++];
-        queue[front] = null;
-        size--;
-        //After removing the last element in a UNWRAPPED state queue
+        Employee removedEmployee = queue[front];
+        if (isWrapped()) {
+            System.out.println("Removing element from a wrapped state");
+            queue[front] = null;
+            front = 0;
+            size--;
+        } //Not wrapped
+        else {
+            queue[front++] = null;
+            size--;
+        }
+        //After removing the last element in a UNWRAPPED/WRAPPED state queue
         if (isEmpty()) {
             //Reassign the front and back to their defaults
             front = 0;
             back = 0;
         }
+
+//        Employee removedEmployee = queue[front];
         return removedEmployee;
     }
 

@@ -29,25 +29,30 @@ public class main {
 
         queue.add(billEnd);
         System.out.println("Removing: " + queue.remove());
-        
+
         queue.add(janeJones);
-        queue.add(johnDoe);
-        queue.add(marySmith);
-        queue.add(mikeWilson);
-        
-        queue.add(darrenSmith);
-        
-        queue.add(janeJones);
-        queue.add(johnDoe);
-        queue.add(marySmith);
-        queue.add(mikeWilson);
-        queue.add(darrenSmith);
-        queue.add(billEnd);
-        
-        
+        System.out.println("Removing: " + queue.remove());
+        System.out.println("Removing: " + queue.remove());
+        System.out.println("Removing: " + queue.remove());
+
+//        queue.add(johnDoe);
+//        queue.add(marySmith);
+//        queue.add(mikeWilson);
+//        
+//        queue.add(darrenSmith);
+//        
+//        queue.add(janeJones);
+//        queue.add(johnDoe);
+//        queue.add(marySmith);
+//        queue.add(mikeWilson);
+//        queue.add(darrenSmith);
+//        queue.add(billEnd);
+//        
+        System.out.println("\nPrinting Queue....");
         queue.printQueue();
-        System.out.println("Front: " + queue.getFront()+", "
-                + "Back(Next available position(0-based) to add): " + queue.getBack()+", "
+        System.out.println();
+        System.out.println("Front: " + queue.getFront() + ", "
+                + "Back(Next available position(0-based) to add): " + queue.getBack() + ", "
                 + "Size of the queue: " + queue.size());
 
 //        System.out.println("Peek: "+queue.peek());
