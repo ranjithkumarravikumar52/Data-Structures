@@ -20,12 +20,21 @@ public class main {
         Employee marySmith = new Employee("Mary", "Smith", 22);
         Employee mikeWilson = new Employee("Mike", "Wilson", 3245);
         Employee billEnd = new Employee("Bill", "End", 78);
-        
+
         ArrayHashTable hashTable = new ArrayHashTable();
-        hashTable.add("Jones", janeJones);
+        hashTable.put("Jones", janeJones);
+        hashTable.put("Doe", johnDoe);
+        hashTable.put("Mike", mikeWilson);
         
-        hashTable.get("Jones");
         
+        //collision
+        hashTable.put("Smith", marySmith);
+        
+        
+//        hashTable.get("Jones");
+        
+        
+
         hashTable.printHashTable();
     }
 
