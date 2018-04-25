@@ -24,14 +24,17 @@ public class main {
         ArrayHashTable hashTable = new ArrayHashTable();
         hashTable.put("Jones", janeJones);
         hashTable.put("Doe", johnDoe);
-        hashTable.put("Mike", mikeWilson);
         
         
-        //collision
+        //collision - avoidance
         hashTable.put("Smith", marySmith);
+        hashTable.put("End", billEnd);
         
+        System.out.println("Retrieving BillEnd: " + hashTable.get("End"));
+        System.out.println("Retrieving Smith: " + hashTable.get("Smith"));
         
-//        hashTable.get("Jones");
+
+
         
         
 
