@@ -68,16 +68,6 @@ public class ArrayHashTable {
         return isOccupied;
     }
 
-//    public void checkAll(){
-//        for(int i =0; i < hashTable.length; i++){
-//            if(hashTable[i] == null){
-//                System.out.println("Printing null..."+i);
-//            }else{
-//                System.out.println("value present "+hashTable[i]);
-//            }
-//        }
-//    }
-    //complexity - constant time :)
     public Employee get(String key) {
         //get hashed value of the key
         int hashedKey = hashedString(key);
@@ -114,9 +104,41 @@ public class ArrayHashTable {
         return null;
     }
 
-    //to get the indices in the range of 0-9
-    //since hashtable's length is 10
+    public void remove(String key) {
+        int hashedKey = hashedString(key);
+
+        //
+        if(hashTable[hashedKey] == null){
+            System.out.println("No element to remove");
+        }
+        if (hashTable[hashedKey].getKey().equals(key)) {
+            hashTable[hashedKey] = null;
+            return;
+        } else {
+            //do linearProbing to find the right key
+            int stopIndex = hashedKey;
+            for (int loopIndex = stopIndex + 1; loopIndex < hashTable.length; loopIndex++) {
+                if (hashTable[loopIndex].getKey().equals(key)) {
+                    hashTable[loopIndex] = null;
+                    return;
+                }
+            }
+            //wrap around
+            for (int loopIndex = 0; loopIndex < stopIndex; loopIndex++) {
+                if (hashTable[loopIndex].getKey().equals(key)) {
+                    hashTable[loopIndex] = null;
+                    return;
+                }
+            }
+
+        }
+        System.out.println("Elment not found");
+
+    }
+
     private int hashedString(String key) {
+        //to get the indices in the range of 0-9
+        //since hashtable's length is 10
         return key.length() % hashTable.length;
     }
 

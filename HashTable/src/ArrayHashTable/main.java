@@ -24,21 +24,27 @@ public class main {
         ArrayHashTable hashTable = new ArrayHashTable();
         hashTable.put("Jones", janeJones);
         hashTable.put("Doe", johnDoe);
+        hashTable.put("Wilson", mikeWilson);
         
         
         //collision - avoidance
         hashTable.put("Smith", marySmith);
         hashTable.put("End", billEnd);
         
+        
+        System.out.println("Retrieving JaneJones: " + hashTable.get("Jones"));
+        System.out.println("Retrieving JohnDoe: " + hashTable.get("Doe"));
+        System.out.println("Retrieving MikeWilson: " + hashTable.get("Wilson"));
+        System.out.println("Retrieving MarySmith: " + hashTable.get("Smith"));
         System.out.println("Retrieving BillEnd: " + hashTable.get("End"));
-        System.out.println("Retrieving Smith: " + hashTable.get("Smith"));
-        
-
-
         
         
-
-        hashTable.printHashTable();
+        hashTable.remove("Doe");
+        hashTable.remove("End");
+        
+        //print hashTable
+//        System.out.println();
+//        hashTable.printHashTable();
     }
 
 }
