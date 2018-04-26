@@ -12,6 +12,7 @@ package ArrayHashTable;
 public class ArrayHashTable {
 
     private Employee[] hashTable;
+    private int size;
 
     public ArrayHashTable() {
         hashTable = new Employee[10];
@@ -35,10 +36,12 @@ public class ArrayHashTable {
                 //insert at the nextAvailableIndex
                 hashTable[probeValue] = employeeValue;
                 employeeValue.setKey(key);
+                size++;
             }
         } else {
             hashTable[hashedKey] = employeeValue;
             employeeValue.setKey(key);
+            size++;
         }
     }
 
@@ -67,71 +70,82 @@ public class ArrayHashTable {
         return isOccupied;
     }
 
-    public Employee get(String key) {
-        //get hashed value of the key
+    private int findKeyLinearProbing(String key) {
         int hashedKey = hashedString(key);
+        int stopIndex = hashedKey;
+        for (int loopIndex = stopIndex + 1; loopIndex < hashTable.length; loopIndex++) {
+            if ( hashTable[loopIndex].getKey().equals(key)) {
+                return loopIndex;
+            }
+        }
+        //wrap around
+        for (int loopIndex = 0; loopIndex < stopIndex; loopIndex++) {
+            if (hashTable[loopIndex].getKey().equals(key)) {
+                return loopIndex;
+            }
+        }
+        return -1;
+    }
 
-        //if no element exists
-        if (hashTable[hashedKey] == null) {
+    public Employee get(String key) {
+
+        //if no elements present
+        if (isEmpty()) {
             return null;
         }
 
-        //how do we get an element which was put through linear probing? 
-        //find the key of the employee and check whether it matches with the given key
+        //get hashed value of the key
+        int hashedKey = hashedString(key);
+
         if (hashTable[hashedKey].getKey().equals(key)) {
             //matching key found
             Employee returnValue = hashTable[hashedKey];
             return returnValue;
-        } else {
-            //matching key not found - do linear probing
-            int stopIndex = hashedKey;
-            for (int loopIndex = stopIndex + 1; loopIndex < hashTable.length; loopIndex++) {
-                if (hashTable[loopIndex].getKey().equals(key)) {
-                    Employee returnValue = hashTable[loopIndex];
-                    return returnValue;
-                }
-            }
-            //wrap around
-            for (int loopIndex = 0; loopIndex < stopIndex; loopIndex++) {
-                if (hashTable[loopIndex].getKey().equals(key)) {
-                    Employee returnValue = hashTable[loopIndex];
-                    return returnValue;
-                }
-            }
-
         }
+
+        //how do we get an element which was put through linear probing? - find the key of the employee and check whether it matches with the given key
+        int keyIndex = findKeyLinearProbing(key);
+        if (keyIndex != -1) {
+            Employee returnValue = hashTable[keyIndex];
+            return returnValue;
+        }
+
+        //if no element exists - 
+        //what happens? when
+        //1. when two elements of same keys values are added - one puts through nonLP method and other through LP method
+        //2. now, remove nonLP element
+        //3. try to get LP element - BUG?!
         return null;
     }
 
-    public void remove(String key) {
-        int hashedKey = hashedString(key);
+    public void remove(String givenKey) {
 
-        //
-        if (hashTable[hashedKey] == null) {
-            System.out.println("No element to remove");
-        }
-        if (hashTable[hashedKey].getKey().equals(key)) {
-            hashTable[hashedKey] = null;
+        if (isEmpty()) {
             return;
-        } else {
-            //do linearProbing to find the right key
-            int stopIndex = hashedKey;
-            for (int loopIndex = stopIndex + 1; loopIndex < hashTable.length; loopIndex++) {
-                if (hashTable[loopIndex].getKey().equals(key)) {
-                    hashTable[loopIndex] = null;
-                    return;
-                }
-            }
-            //wrap around
-            for (int loopIndex = 0; loopIndex < stopIndex; loopIndex++) {
-                if (hashTable[loopIndex].getKey().equals(key)) {
-                    hashTable[loopIndex] = null;
-                    return;
-                }
-            }
-
         }
-        System.out.println("Elment not found");
+
+        //get hashed value of the key
+        int hashedKey = hashedString(givenKey);
+        if ( hashTable[hashedKey].getKey().equals(givenKey)) {
+            //matching key found
+            hashTable[hashedKey] = null;
+            size--;
+            return;
+        }
+
+        //how do we get an element which was put through linear probing? - find the key of the employee and check whether it matches with the given key
+        int keyIndex = findKeyLinearProbing(givenKey);
+        if (keyIndex != -1) {
+            hashTable[keyIndex] = null;
+            size--;
+        }
+
+        //if no element exists - 
+        //what happens? when
+        //1. when two elements of same keys values are added - one puts through nonLP method and other through LP method
+        //2. now, remove nonLP element
+        //3. try to get LP element - BUG?!
+        System.out.println("Element not found to delete");
 
     }
 
@@ -146,6 +160,14 @@ public class ArrayHashTable {
         for (int i = 0; i < hashTable.length; i++) {
             System.out.println(i + "-->" + hashTable[i]);
         }
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
+    }
+    
+    public int size(){
+        return size;
     }
 
 }
