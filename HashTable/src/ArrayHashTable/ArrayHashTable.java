@@ -42,21 +42,20 @@ public class ArrayHashTable {
         }
     }
 
+    /*
+        using only one loop to check till the end of hashtable and then wrap
+     */
     private int linearProbing(int hashedKey) {
-        //collision avoidance - linearKey
-        //check till the end of the hashTable
-        /*
-        use only one loop to check till the end of hashtable and then wrap
-         */
+        int countScan = 1;
         for (int loopIndex = hashedKey + 1; loopIndex < hashTable.length; loopIndex++) {
             if (!occupied(loopIndex)) {
                 return loopIndex;
             }
-        }
-        //wrap around
-        for (int loopIndex = 0; loopIndex < hashedKey; loopIndex++) {
-            if (!occupied(loopIndex)) {
-                return loopIndex;
+            //wrap around
+            if (loopIndex == hashTable.length - 1 && countScan > 0) {
+                loopIndex = 0;
+                countScan--;
+                System.out.println("Inside Linear Probing: Wrapping....");
             }
         }
         //no available position
@@ -77,14 +76,14 @@ public class ArrayHashTable {
             return null;
         }
 
-        //how do we get an element which was put through linear probing?
+        //how do we get an element which was put through linear probing? 
+        //find the key of the employee and check whether it matches with the given key
         if (hashTable[hashedKey].getKey().equals(key)) {
             //matching key found
             Employee returnValue = hashTable[hashedKey];
             return returnValue;
         } else {
-            //matching ket not found 
-            //do linear probing
+            //matching key not found - do linear probing
             int stopIndex = hashedKey;
             for (int loopIndex = stopIndex + 1; loopIndex < hashTable.length; loopIndex++) {
                 if (hashTable[loopIndex].getKey().equals(key)) {
@@ -108,7 +107,7 @@ public class ArrayHashTable {
         int hashedKey = hashedString(key);
 
         //
-        if(hashTable[hashedKey] == null){
+        if (hashTable[hashedKey] == null) {
             System.out.println("No element to remove");
         }
         if (hashTable[hashedKey].getKey().equals(key)) {
@@ -143,6 +142,7 @@ public class ArrayHashTable {
     }
 
     public void printHashTable() {
+        System.out.println("\nPrinting HashTable...");
         for (int i = 0; i < hashTable.length; i++) {
             System.out.println(i + "-->" + hashTable[i]);
         }

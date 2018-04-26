@@ -35,16 +35,16 @@ public class main {
         System.out.println("Retrieving JaneJones: " + hashTable.get("Jones"));
         System.out.println("Retrieving JohnDoe: " + hashTable.get("Doe"));
         System.out.println("Retrieving MikeWilson: " + hashTable.get("Wilson"));
+        //get Elements which was added through linear probing
         System.out.println("Retrieving MarySmith: " + hashTable.get("Smith"));
         System.out.println("Retrieving BillEnd: " + hashTable.get("End"));
         
         
-        hashTable.remove("Doe");
-        hashTable.remove("End");
-        
+//        hashTable.remove("Doe");
+//        hashTable.remove("End");
+//        
         //print hashTable
-//        System.out.println();
-//        hashTable.printHashTable();
+        hashTable.printHashTable();
     }
 
 }
