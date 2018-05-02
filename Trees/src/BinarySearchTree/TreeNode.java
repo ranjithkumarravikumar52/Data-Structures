@@ -11,5 +11,5 @@ package BinarySearchTree;
  * @author Ranjith
  */
 public class TreeNode {
-
+    
 }
