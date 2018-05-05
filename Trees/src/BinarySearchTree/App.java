@@ -35,9 +35,16 @@ public class App {
 //            System.out.println(tree.get(29));
 //            //no element
 //            System.out.println(tree.get(3211));
+//            System.out.println("min value in tree " + tree.min());
+//            System.out.println("min value in tree " + tree.max());
+            tree.inOrderTraversal();
+            tree.delete(15);
+            tree.inOrderTraversal();
+            tree.delete(20);
+            tree.inOrderTraversal();
+            tree.delete(25);
+            tree.inOrderTraversal();
 
-            System.out.println("min value in tree " + tree.min());
-            System.out.println("min value in tree " + tree.max());
         } catch (Exception e) {
             e.printStackTrace();
         }

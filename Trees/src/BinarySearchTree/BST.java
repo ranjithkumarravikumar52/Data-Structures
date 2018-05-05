@@ -94,19 +94,19 @@ public class BST {
 
     }
 
-    public int min() throws Exception {
+    public int min() {
         if (root != null) {
             return root.getMin();
         } else {
-            throw new Exception();
+            return Integer.MIN_VALUE;
         }
     }
 
-    public int max() throws Exception {
+    public int max(){
         if (root != null) {
             return root.getMax();
         } else {
-            throw new Exception();
+            return Integer.MAX_VALUE;
         }
     }
 
@@ -127,7 +127,7 @@ public class BST {
             have to go down on either left subTree OR 
             right subTree
          */
-        /*
+ /*
                             subTreeRoot
         leftsubtree                     rightsubtree
          */
@@ -138,8 +138,7 @@ public class BST {
             //REPLACE the subTreeChild with whatever the result from the method even if there's no change - which is completely FINE
             //We are not physically rewiring all the connections
             subTreeRoot.setLeftChild(deleteResult);
-        }
-        //rightSubtree
+        } //rightSubtree
         else if (value > subTreeRoot.getData()) {
             //visualize the below method as shown in the above block comment
             TreeNode deleteResult = delete(subTreeRoot.getRightChild(), value);
@@ -149,23 +148,37 @@ public class BST {
         } //if we reach to this point of the code that mean value is equal to the root here
         //which means that we have found the value that we want to delete
         //this is where the "delete" operations takes place
-        else {
-            //DELETE CASE 0: no children - which has no replacement node
-            //DELETE CASE 1: 1 child - child node is the replacement node
-            if(subTreeRoot.getLeftChild() == null){
+        else //DELETE CASE 0: no children - which has no replacement node
+        //DELETE CASE 1: 1 child - child node is the replacement node
+        {
+            if (subTreeRoot.getLeftChild() == null) {
                 //satisfies both the case 0 and 1
                 //if rightchild is present - send rightchild as a replacement node for the subTreeRoot
                 //if not present then send null, eventually replacing the subTreeRoot with null
                 return subTreeRoot.getRightChild();
-            }
-            else if(subTreeRoot.getRightChild() == null){
+            } else if (subTreeRoot.getRightChild() == null) {
                 //satisfies both the case 0 and 1
                 //if rightchild is present - send rightchild as a replacement node for the subTreeRoot
                 //if not present then send null, eventually replacing the subTreeRoot with null
                 return subTreeRoot.getLeftChild();
+            } /*
+            * Figure out what the replacement node will be
+            * MUST have minimial disruption to the tree
+            * can take the replacement node from either leftSubTree or rightSubTree
+            * * for left subtree, find the max element for replacement node also serves to maintain minimial disruption 
+            * * for right subtree, find the min element for replacement node also serves to maintain minimial disruption 
+             */ else {
+                //if we reach here
+                //DELETE CASE 2: two children
+                //Replace the value in the subtreeroot node with the smallest value
+                //from the right subtree
+                subTreeRoot.setData(subTreeRoot.getRightChild().getMin());
+                
+                //Delete the node by passing the same value from where we got the min
+                subTreeRoot.setRightChild(delete(subTreeRoot.getRightChild(), subTreeRoot.getData()));
             }
         }
-        
+
         //if we reach here that means that we haven't found the value AND this subTreeRoot is not the tree we wanna delete
         return subTreeRoot;
 

@@ -49,3 +49,7 @@
 * Get a node in the tree
 * find the min value in the tree
 * find the max value in the tree
+* Delete operations (Complex to solve! - check source code for documentation)
+	* Case 0: when the deleteNode has no children
+	* Case 1: when the deleteNode has one child
+	* Case 2: when the deleteNode has two children
