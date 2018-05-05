@@ -84,5 +84,13 @@ public class BST {
         Level 1: node 2, node 3
          */
     }
-
+    
+    public TreeNode get(int value){
+        if(root == null){
+            System.out.println("Empty tree");
+            return null; 
+        }
+            return root.get(value);
+        
+    }
 }

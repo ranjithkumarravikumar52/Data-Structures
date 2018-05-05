@@ -85,7 +85,7 @@ public class TreeNode {
         //remove the queue and print
         while (!queue.isEmpty()) {
             TreeNode removedNode = queue.remove();
-            System.out.print(removedNode+" ");
+            System.out.print(removedNode + " ");
             //if the removed has (left and then right) children then add to the queue
             if (removedNode.getLeftChild() != null) {
                 queue.add(removedNode.getLeftChild());
@@ -102,14 +102,14 @@ public class TreeNode {
         if (leftChild != null) {
             leftChild.inOrderTraversal();
         }
-        System.out.print(data+" ");
+        System.out.print(data + " ");
         if (rightChild != null) {
             rightChild.inOrderTraversal();
         }
     }
 
     public void preOrderTraversal() {
-        System.out.print(data+" ");
+        System.out.print(data + " ");
         if (leftChild != null) {
             leftChild.preOrderTraversal();
         }
@@ -122,10 +122,26 @@ public class TreeNode {
         if (leftChild != null) {
             leftChild.postOrderTraversal();
         }
-        if(rightChild != null){
+        if (rightChild != null) {
             rightChild.postOrderTraversal();
         }
-        System.out.print(data+" ");
+        System.out.print(data + " ");
+    }
+
+    public TreeNode get(int value) {
+        if (data == value) {
+            return this;
+        } else if (value < data) {
+            //rabbit hole into left subtree
+            if (leftChild != null) {
+                return leftChild.get(value);
+            }
+        } else if (value > data) {
+            if (rightChild != null) {
+                return rightChild.get(value);
+            }
+        }
+        return null;
     }
 
 }

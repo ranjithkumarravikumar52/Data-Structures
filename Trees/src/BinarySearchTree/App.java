@@ -24,12 +24,16 @@ public class App {
         tree.insert(32);
 
 //        tree.printTreeLevelOrderTraversal();
-        tree.levelOrderTraversal();
-
-        tree.inOrderTraversal();
-
-        tree.preOrderTraversal();
-
-        tree.postOrderTraversal();
+//        tree.levelOrderTraversal();
+//        tree.inOrderTraversal();
+//        tree.preOrderTraversal();
+//        tree.postOrderTraversal();
+        
+        System.out.println(tree.get(25));
+        System.out.println(tree.get(15));
+        System.out.println(tree.get(22));
+        System.out.println(tree.get(29));
+        System.out.println(tree.get(32));
+        
     }
 }

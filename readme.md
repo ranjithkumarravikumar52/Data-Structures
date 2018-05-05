@@ -45,4 +45,5 @@
 	* In-Order
 	* Pre-Order
 	* Post-Order
-![Traversals](/docs/traversals.png?raw=true "traversals")
+	*	![Traversals](/docs/traversals.png?raw=true "traversals")
+* Get a node in the tree
