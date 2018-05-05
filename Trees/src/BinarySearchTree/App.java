@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package BinarySearchTree;
 
 /**
@@ -11,6 +10,7 @@ package BinarySearchTree;
  * @author Ranjith
  */
 public class App {
+
     public static void main(String[] args) {
         BST tree = new BST();
         tree.insert(25);
@@ -22,7 +22,14 @@ public class App {
         tree.insert(30);
         tree.insert(29);
         tree.insert(32);
-        
-        tree.printTreeLevelOrderTraversal();
+
+//        tree.printTreeLevelOrderTraversal();
+        tree.levelOrderTraversal();
+
+        tree.inOrderTraversal();
+
+        tree.preOrderTraversal();
+
+        tree.postOrderTraversal();
     }
 }

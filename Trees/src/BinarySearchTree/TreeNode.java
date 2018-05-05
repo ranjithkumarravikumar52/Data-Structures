@@ -1,5 +1,8 @@
 package BinarySearchTree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class TreeNode {
 
     /*
@@ -71,9 +74,58 @@ public class TreeNode {
 
     @Override
     public String toString() {
-        return ""+data;
+        return "" + data;
     }
-    
-    
+
+    public void levelOrderTraversal() {
+        //Implementing BFS
+        //add root to the queue
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        queue.add(this);
+        //remove the queue and print
+        while (!queue.isEmpty()) {
+            TreeNode removedNode = queue.remove();
+            System.out.print(removedNode+" ");
+            //if the removed has (left and then right) children then add to the queue
+            if (removedNode.getLeftChild() != null) {
+                queue.add(removedNode.getLeftChild());
+            }
+            if (removedNode.getRightChild() != null) {
+                queue.add(removedNode.getRightChild());
+            }
+            //repeat till the queue is empty
+        }
+
+    }
+
+    public void inOrderTraversal() {
+        if (leftChild != null) {
+            leftChild.inOrderTraversal();
+        }
+        System.out.print(data+" ");
+        if (rightChild != null) {
+            rightChild.inOrderTraversal();
+        }
+    }
+
+    public void preOrderTraversal() {
+        System.out.print(data+" ");
+        if (leftChild != null) {
+            leftChild.preOrderTraversal();
+        }
+        if (rightChild != null) {
+            rightChild.preOrderTraversal();
+        }
+    }
+
+    public void postOrderTraversal() {
+        if (leftChild != null) {
+            leftChild.postOrderTraversal();
+        }
+        if(rightChild != null){
+            rightChild.postOrderTraversal();
+        }
+        System.out.print(data+" ");
+    }
 
 }

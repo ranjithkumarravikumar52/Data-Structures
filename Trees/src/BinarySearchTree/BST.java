@@ -15,7 +15,48 @@ public class BST {
             root = new TreeNode(newValue);
             return;
         } else {
+//            System.out.println();
             root.insert(newValue);
+        }
+    }
+
+    public void levelOrderTraversal() {
+        if (root == null) {
+            System.out.println("Empty tree");
+            return;
+        } else {
+            System.out.println("\nLevel order");
+            root.levelOrderTraversal();
+        }
+    }
+
+    public void inOrderTraversal() {
+        if (root == null) {
+            System.out.println("Empty tree");
+            return;
+        } else {
+            System.out.println("\nIn order");
+            root.inOrderTraversal();
+        }
+    }
+
+    public void preOrderTraversal() {
+        if (root == null) {
+            System.out.println("Empty tree");
+            return;
+        } else {
+            System.out.println("\npre order");
+            root.preOrderTraversal();
+        }
+    }
+
+    public void postOrderTraversal() {
+        if (root == null) {
+            System.out.println("Empty tree");
+            return;
+        } else {
+            System.out.println("\npost order");
+            root.postOrderTraversal();
         }
     }
 
@@ -43,4 +84,5 @@ public class BST {
         Level 1: node 2, node 3
          */
     }
+
 }
