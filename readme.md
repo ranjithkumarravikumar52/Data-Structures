@@ -47,3 +47,5 @@
 	* Post-Order
 	*	![Traversals](/docs/traversals.png?raw=true "traversals")
 * Get a node in the tree
+* find the min value in the tree
+* find the max value in the tree

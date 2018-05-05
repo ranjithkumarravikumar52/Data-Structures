@@ -93,4 +93,19 @@ public class BST {
             return root.get(value);
         
     }
+    
+    public int getMin() throws Exception{
+        if ( root != null){
+            return root.getMin();
+        }else{
+            throw new Exception();
+        } 
+    }
+    public int getMax() throws Exception{
+        if ( root != null){
+            return root.getMax();
+        }else{
+            throw new Exception();
+        } 
+    }
 }

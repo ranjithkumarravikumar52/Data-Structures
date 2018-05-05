@@ -142,6 +142,22 @@ public class TreeNode {
             }
         }
         return null;
+    } 
+    
+    public int getMin(){
+        if (this.leftChild == null){
+            return data; 
+        }else{
+            return leftChild.getMin();
+        }
+    }
+    
+    public int getMax(){
+        if (this.rightChild == null){
+            return data; 
+        }else{
+            return rightChild.getMax();
+        }
     }
 
 }
