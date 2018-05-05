@@ -12,6 +12,9 @@ package BinarySearchTree;
  */
 public class App {
     public static void main(String[] args) {
-        
+        BST tree = new BST();
+        tree.insert(3);
+        tree.insert(1);
+        tree.insert(4);
     }
 }

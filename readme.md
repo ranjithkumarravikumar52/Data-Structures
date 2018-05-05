@@ -11,7 +11,7 @@
 * Fixed Data Range
 	* Counting Sort
 	* Radix Sort
-	
+
 #### Lists
 * ArrayLists
 * Vector
@@ -35,4 +35,8 @@
 * Implement HashTable ADT using a LinkedList (also called Chained HashTable)
 * Practicing HashTable ADT from LinkedList JDK class
 
-
+#### Trees
+* Create a class called TreeNode and instantiate its member variables and methods
+* This TreeNode is scalable and extensible enough to implement BST, RB Trees, AVL Trees.
+* Create a class called BST
+* Insert methods 
