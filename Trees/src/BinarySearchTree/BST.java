@@ -84,28 +84,90 @@ public class BST {
         Level 1: node 2, node 3
          */
     }
-    
-    public TreeNode get(int value){
-        if(root == null){
+
+    public TreeNode get(int value) {
+        if (root == null) {
             System.out.println("Empty tree");
-            return null; 
+            return null;
         }
-            return root.get(value);
-        
+        return root.get(value);
+
     }
-    
-    public int getMin() throws Exception{
-        if ( root != null){
+
+    public int min() throws Exception {
+        if (root != null) {
             return root.getMin();
-        }else{
+        } else {
             throw new Exception();
-        } 
+        }
     }
-    public int getMax() throws Exception{
-        if ( root != null){
+
+    public int max() throws Exception {
+        if (root != null) {
             return root.getMax();
-        }else{
+        } else {
             throw new Exception();
-        } 
+        }
+    }
+
+    public void delete(int value) {
+        //how do we pass the entire tree to some method? By sending the root pointer
+        root = delete(root, value);
+    }
+
+    //this method returns the replacement node
+    private TreeNode delete(TreeNode subTreeRoot, int value) {
+        if (subTreeRoot == null) {
+            //empty tree //return null; can also be used
+            return subTreeRoot;
+        }
+        /*
+            at this point, there are three possibilities
+            we have to delete the subTreeRoot OR
+            have to go down on either left subTree OR 
+            right subTree
+         */
+        /*
+                            subTreeRoot
+        leftsubtree                     rightsubtree
+         */
+        //leftsubtree
+        if (value < subTreeRoot.getData()) {
+            //visualize the below method as shown in the above block comment
+            TreeNode deleteResult = delete(subTreeRoot.getLeftChild(), value);
+            //REPLACE the subTreeChild with whatever the result from the method even if there's no change - which is completely FINE
+            //We are not physically rewiring all the connections
+            subTreeRoot.setLeftChild(deleteResult);
+        }
+        //rightSubtree
+        else if (value > subTreeRoot.getData()) {
+            //visualize the below method as shown in the above block comment
+            TreeNode deleteResult = delete(subTreeRoot.getRightChild(), value);
+            //REPLACE the subTreeChild with whatever the result from the method even if there's no change - which is completely FINE
+            //We are not physically rewiring all the connections
+            subTreeRoot.setRightChild(deleteResult);
+        } //if we reach to this point of the code that mean value is equal to the root here
+        //which means that we have found the value that we want to delete
+        //this is where the "delete" operations takes place
+        else {
+            //DELETE CASE 0: no children - which has no replacement node
+            //DELETE CASE 1: 1 child - child node is the replacement node
+            if(subTreeRoot.getLeftChild() == null){
+                //satisfies both the case 0 and 1
+                //if rightchild is present - send rightchild as a replacement node for the subTreeRoot
+                //if not present then send null, eventually replacing the subTreeRoot with null
+                return subTreeRoot.getRightChild();
+            }
+            else if(subTreeRoot.getRightChild() == null){
+                //satisfies both the case 0 and 1
+                //if rightchild is present - send rightchild as a replacement node for the subTreeRoot
+                //if not present then send null, eventually replacing the subTreeRoot with null
+                return subTreeRoot.getLeftChild();
+            }
+        }
+        
+        //if we reach here that means that we haven't found the value AND this subTreeRoot is not the tree we wanna delete
+        return subTreeRoot;
+
     }
 }

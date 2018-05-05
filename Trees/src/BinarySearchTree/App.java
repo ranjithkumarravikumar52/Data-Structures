@@ -36,8 +36,8 @@ public class App {
 //            //no element
 //            System.out.println(tree.get(3211));
 
-            System.out.println("min value in tree " + tree.getMin());
-            System.out.println("min value in tree " + tree.getMax());
+            System.out.println("min value in tree " + tree.min());
+            System.out.println("min value in tree " + tree.max());
         } catch (Exception e) {
             e.printStackTrace();
         }
