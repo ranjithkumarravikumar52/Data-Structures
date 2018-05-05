@@ -69,4 +69,11 @@ public class TreeNode {
         this.data = data;
     }
 
+    @Override
+    public String toString() {
+        return ""+data;
+    }
+    
+    
+
 }

@@ -39,4 +39,5 @@
 * Create a class called TreeNode and instantiate its member variables and methods
 * This TreeNode is scalable and extensible enough to implement BST, RB Trees, AVL Trees.
 * Create a class called BST
-* Insert methods 
+* Insert methods
+* Print tree through level order traversals (BFS)
