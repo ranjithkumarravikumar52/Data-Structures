@@ -35,7 +35,7 @@
 * Implement HashTable ADT using a LinkedList (also called Chained HashTable)
 * Practicing HashTable ADT from LinkedList JDK class
 
-#### Trees
+#### Binary Search Tree
 * Create a class called TreeNode and instantiate its member variables and methods
 * This TreeNode is scalable and extensible enough to implement BST, RB Trees, AVL Trees.
 * Create a class called BST
@@ -53,3 +53,19 @@
 	* Case 0: when the deleteNode has no children
 	* Case 1: when the deleteNode has one child
 	* Case 2: when the deleteNode has two children
+
+#### Heap Tree
+* Introduction
+	* Heap Tree is a complete binary tree, hence this Data-Structure can be backed by an array (any complete binary tree can be backed by array)
+	* Implement max heap (min heap is nothing but a mirror image of max-heap)
+	* For a node at array[i]
+		* left child = 2i + 1;
+		* right child = 2i + 2;
+		* parent = floor((i-1)/2); (int datatype implicitly gives the floor value)
+* Insertion
+	* Always add at the end of the array
+	* Every insertion is followed by heapify process
+* heapify
+	* Compare the new element against it's parent
+	* if the new element is greater than the parent, then swap it with its parent
+	* Rinse and repeat
