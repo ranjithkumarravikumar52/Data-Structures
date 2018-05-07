@@ -65,7 +65,10 @@
 * Insertion
 	* Always add at the end of the array
 	* Every insertion is followed by heapify process
-* heapify
+* heapifyTree
 	* Compare the new element against it's parent
 	* if the new element is greater than the parent, then swap it with its parent
 	* Rinse and repeat
+* DeleteanElement
+	* replace the deleteElement with last element from the array (heapTree)
+	* then heapify the whole tree

@@ -12,17 +12,12 @@ public class Heaps {
     }
 
     public void insert(int newElement) {
-        //insert at the end of the array
         heapArray[size++] = newElement;
-
-        //every insertion is followed by a heapfiy process
         int childIndex = size - 1;
         heapifyTree(childIndex);
     }
 
     private void heapifyTree(int childIndex) {
-        //child = index; parent = (index - 1)/2
-//        int parentIndex = (childIndex - 1) / 2;
         while (childIndex > 0) {
             int parentIndex = (childIndex - 1) / 2;
             if (heapArray[childIndex] > heapArray[parentIndex]) {
@@ -32,10 +27,7 @@ public class Heaps {
         }
     }
 
-
-
     private void swap(int childIndex, int parentIndex) {
-        //Debug variables
         int parentValue = heapArray[parentIndex];
         int childValue = heapArray[childIndex];
 
@@ -44,9 +36,18 @@ public class Heaps {
         heapArray[childIndex] = tempValue;
     }
 
-    @Override
-    public String toString() {
-        return Arrays.toString(heapArray);
+    public void display() {
+        for (int i = 0; i < size; i++) {
+            System.out.print(heapArray[i] + " ");
+        }
+        System.out.println();
     }
-
+    
+    public void delete(int deleteIndex){
+        if(deleteIndex >=0 && deleteIndex < size){
+            heapArray[deleteIndex] = heapArray[size - 1];
+            size--;
+            heapifyTree(size -1);
+        }
+    }
 }
