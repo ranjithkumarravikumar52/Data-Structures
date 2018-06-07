@@ -23,7 +23,7 @@ public class InsertionSort extends RandomDataRangeSortAlgorithm{
 
         }
         setStepsToSort(stepsToSort);
-        setSortedArray(localArray);
+        setInputArray(localArray);
 
     }
 }
