@@ -4,3 +4,10 @@
 /Trees/build/
 /Heaps/nbproject/private/
 /Heaps/build/
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/dictionaries
+.idea/**/shelf
+out/
+.idea/
+*.iml
