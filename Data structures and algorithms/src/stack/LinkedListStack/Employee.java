@@ -1,6 +1,4 @@
-package LinkedListStack;
-
-import SimpleStackArray.*;
+package stack.LinkedListStack;
 
 public class Employee {
 

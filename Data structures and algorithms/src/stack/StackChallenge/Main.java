@@ -1,6 +1,5 @@
-package StackChallenge;
+package stack.StackChallenge;
 
-import java.util.Iterator;
 import java.util.LinkedList;
 
 public class Main {

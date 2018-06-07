@@ -1,4 +1,4 @@
-package SimpleStackArray;
+package stack.SimpleStackArray;
 
 public class Employee {
 

@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package LinkedListStack;
+package stack.SimpleStackArray;
 
-/**
- *
- * @author Ranjith
- */
 public class main {
 
     public static void main(String[] args) {
@@ -18,20 +9,32 @@ public class main {
         Employee mikeWilson = new Employee("Mike", "Wilson", 3245);
         Employee billEnd = new Employee("Bill", "End", 78);
         
-        LinkedStack stack = new LinkedStack();
+        ArrayStack stack = new ArrayStack(10);
         
-        System.out.println(stack.isStackEmpty());
+//        stack.pop();
         
         stack.push(janeJones);
         stack.push(johnDoe);
         stack.push(marySmith);
         stack.push(mikeWilson);
         stack.push(billEnd);
+        stack.push(janeJones);
+        stack.push(johnDoe);
+        stack.push(marySmith);
+        stack.push(mikeWilson);
+        stack.push(billEnd);
         
-        System.out.println(stack.pop());
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        stack.pop();
         
-        System.out.println(stack.peek());
-        
-//        stack.printStack();
+        stack.printStack();
     }
 }
