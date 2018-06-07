@@ -1,7 +1,5 @@
 package list.LinkedListDoubleADTImplementation;
 
-import LinkedListADTImplementation.*;
-
 public class Employee {
 
     private String firstName;
@@ -62,9 +60,9 @@ public class Employee {
     }
 
     /*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
+     * (non-Javadoc)
+     *
+     * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {

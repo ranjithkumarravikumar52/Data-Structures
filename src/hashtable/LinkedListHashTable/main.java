@@ -1,6 +1,6 @@
 package hashtable.LinkedListHashTable;
 
-import ArrayHashTable.*;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.

@@ -1,7 +1,5 @@
 package queue.CircularQueue;
 
-import QueueArray.*;
-
 public class Employee {
 
     private String firstName;

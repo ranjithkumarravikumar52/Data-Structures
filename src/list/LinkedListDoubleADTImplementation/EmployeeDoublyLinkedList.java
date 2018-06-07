@@ -1,6 +1,6 @@
 package list.LinkedListDoubleADTImplementation;
 
-import LinkedListADTImplementation.*;
+
 
 public class EmployeeDoublyLinkedList {
 

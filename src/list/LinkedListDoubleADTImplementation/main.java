@@ -1,7 +1,5 @@
 package list.LinkedListDoubleADTImplementation;
 
-import LinkedListADTImplementation.*;
-
 public class main {
 
     public static void main(String[] args) {

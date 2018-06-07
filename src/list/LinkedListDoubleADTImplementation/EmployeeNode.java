@@ -1,9 +1,7 @@
 package list.LinkedListDoubleADTImplementation;
 
-import LinkedListADTImplementation.*;
-
 public class EmployeeNode {
-    private Employee employee; 
+    private Employee employee;
     private EmployeeNode next;
     private EmployeeNode previous;
 
@@ -39,9 +37,6 @@ public class EmployeeNode {
     public void setPrevious(EmployeeNode previous) {
         this.previous = previous;
     }
-    
-    
-    
-    
-    
+
+
 }
