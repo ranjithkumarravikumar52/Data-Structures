@@ -1,4 +1,6 @@
-package ArrayHashTable;
+package hashtable.LinkedListHashTable;
+
+import ArrayHashTable.*;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -21,30 +23,29 @@ public class main {
         Employee mikeWilson = new Employee("Mike", "Wilson", 3245);
         Employee billEnd = new Employee("Bill", "End", 78);
 
-        ArrayHashTable hashTable = new ArrayHashTable();
+        LinkedListHashTable hashTable = new LinkedListHashTable();
         
         //non-linear put
         hashTable.put("Jones", janeJones);
         hashTable.put("Doe", johnDoe);
         hashTable.put("Wilson", mikeWilson);
-        
-        
+       
         //collision - avoidance (linear put)
         hashTable.put("Smith", marySmith);
         hashTable.put("End", billEnd);
-        
-        //size
-//        System.out.println("Size: "+hashTable.size());
-        
-        
-//        System.out.println("Retrieving JaneJones: " + hashTable.get("Jones"));
-//        System.out.println("Retrieving JohnDoe: " + hashTable.get("Doe"));
-//        System.out.println("Retrieving MikeWilson: " + hashTable.get("Wilson"));
-//        //get Elements which was added through linear probing
-//        System.out.println("Retrieving MarySmith: " + hashTable.get("Smith"));
-//        System.out.println("Retrieving BillEnd: " + hashTable.get("End"));
+//        
+//        //size
+////        System.out.println("Size: "+hashTable.size());
 //        
 //        
+        System.out.println("Retrieving JaneJones: " + hashTable.get("Jones"));
+        System.out.println("Retrieving JohnDoe: " + hashTable.get("Doe"));
+        System.out.println("Retrieving MikeWilson: " + hashTable.get("Wilson"));
+        //get Elements which was added through linear probing
+        System.out.println("Retrieving MarySmith: " + hashTable.get("Smith"));
+        System.out.println("Retrieving BillEnd: " + hashTable.get("End"));
+////        
+////        
         hashTable.remove("Doe");
         hashTable.remove("End");
         

@@ -1,10 +1,28 @@
-package HashTableJDK;
+package hashtable.ArrayHashTable;
 
 public class Employee {
 
     private String firstName;
     private String lastName;
     private int id;
+    private String key; 
+    private int probe;
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public int getProbe() {
+        return probe;
+    }
+
+    public void setProbe(int probe) {
+        this.probe = probe;
+    }
 
     public Employee(String firstName, String lastName, int id) {
         this.firstName = firstName;

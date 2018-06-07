@@ -1,4 +1,4 @@
-package QueueChallenge;
+package queue.QueueChallenge;
 
 import java.util.Iterator;
 import java.util.LinkedList;

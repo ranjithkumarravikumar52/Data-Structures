@@ -1,4 +1,4 @@
-package QueueArray;
+package hashtable.HashTableJDK;
 
 public class Employee {
 

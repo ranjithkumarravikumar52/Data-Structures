@@ -1,4 +1,4 @@
-package QueueArray;
+package queue.QueueArray;
 
 public class main {
 

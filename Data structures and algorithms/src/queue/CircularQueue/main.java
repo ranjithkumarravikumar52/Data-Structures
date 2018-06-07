@@ -1,4 +1,4 @@
-package CircularQueue;
+package queue.CircularQueue;
 
 public class main {
 

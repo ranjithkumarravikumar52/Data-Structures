@@ -1,6 +1,4 @@
-package CircularQueue;
-
-import QueueArray.*;
+package queue.QueueArray;
 
 public class Employee {
 

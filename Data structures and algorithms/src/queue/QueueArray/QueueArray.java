@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package QueueArray;
+package queue.QueueArray;
 
 import java.util.NoSuchElementException;
 
