@@ -9,7 +9,7 @@ public class QuickSort extends RandomDataRangeSortAlgorithm {
 //        int[] localArray = {20, 35, -15, 7, 55, 1, -22};
         System.out.println("===QUICK SORT===");
         doQuickSort(localArray, 0, localArray.length);
-        setSortedArray(localArray);
+        setInputArray(localArray);
     }
 
     private void doQuickSort(int[] localArray, int start, int end) {

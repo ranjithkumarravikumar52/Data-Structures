@@ -17,7 +17,7 @@ public class MergeSort extends RandomDataRangeSortAlgorithm{
         int end = localArray.length;
 
         splitForMergeSort(localArray, start, end);
-        setSortedArray(localArray);
+        setInputArray(localArray);
 
     }
 //end index is always one greater than the last element's index

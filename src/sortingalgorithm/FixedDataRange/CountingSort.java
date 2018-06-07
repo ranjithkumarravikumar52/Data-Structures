@@ -28,7 +28,7 @@ public class CountingSort extends FixedDataRangeSortAlgorithm {
             }
         }
         
-        setSortedArray(localArray);
+        setInputArray(localArray);
 
     }
 

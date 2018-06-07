@@ -1,10 +1,14 @@
 package sortingalgorithm.RandomDataRange;
 
-import sortingalgorithm.Init.swappable;
+import sortingalgorithm.Util.swappable;
 
 public class BubbleSort extends RandomDataRangeSortAlgorithm implements swappable {
 
-    
+    /**
+     * Worst sorting algorithm
+     * Time complexity: O(n^2)
+     * In-place sorting algorithm
+     */
     public void bubbleSort() {
         int stepsToSort = 0;
         int[] localArray = new int[getUnSortedArray().length];
@@ -21,7 +25,7 @@ public class BubbleSort extends RandomDataRangeSortAlgorithm implements swappabl
         }
 
         setStepsToSort(stepsToSort);
-        setSortedArray(localArray);
+        setInputArray(localArray);
     }
 
     @Override

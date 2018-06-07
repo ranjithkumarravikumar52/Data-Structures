@@ -5,7 +5,7 @@
  */
 package sortingalgorithm.RandomDataRange;
 
-import sortingalgorithm.Init.swappable;
+import sortingalgorithm.Util.swappable;
 
 /**
  *
@@ -31,7 +31,7 @@ public class SelectionSort extends RandomDataRangeSortAlgorithm implements swapp
             swap(localArray, lastUnsortedIndex, maxIndex);
         }
         setStepsToSort(stepsToSort);
-        setSortedArray(localArray);
+        setInputArray(localArray);
     }
 
     public void swap(int[] array, int i, int j) {

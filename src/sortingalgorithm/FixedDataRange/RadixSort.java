@@ -65,7 +65,7 @@ public class RadixSort extends FixedDataRangeSortAlgorithm {
 			// System.out.println(Arrays.toString(tempArray));
 			// System.out.println();
 			unSortedArray = tempArray;
-			setSortedArray(tempArray);
+			setInputArray(tempArray);
 
 		}
 
