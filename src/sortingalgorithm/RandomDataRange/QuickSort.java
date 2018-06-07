@@ -12,6 +12,7 @@ public class QuickSort extends RandomDataRangeSortAlgorithm {
         setInputArray(localArray);
     }
 
+
     private void doQuickSort(int[] localArray, int start, int end) {
 
         if (end - start < 2) {
@@ -23,26 +24,48 @@ public class QuickSort extends RandomDataRangeSortAlgorithm {
         int j = end;
 
         while (i < j) {
-            //traverse from the end of the array
-            //look for position element < pivot
-            while (i < j && localArray[--j] >= pivot);
-            if (i < j) {
-                localArray[i] = localArray[j];
-            }
-
-            //traverse from the start of the array
-            //look for position where element > pivot
-            while (i < j && localArray[++i] <= pivot);
-            if (i < j) {
-                localArray[j] = localArray[i];
-            }
+            j = traverseFromEnd(localArray, pivot, i, j);
+            i = traverseFromStart(localArray, pivot, i, j);
         }
 
         //if code reaches here then i == j
         localArray[i] = pivot;
-//        printArray(localArray);
         doQuickSort(localArray, start, i);
         doQuickSort(localArray, i + 1, end);
 
+    }
+
+    /**
+     * traverse from the start of the array
+     * look for position where element > pivot
+     * @param localArray
+     * @param pivot
+     * @param i
+     * @param j
+     * @return
+     */
+    private int traverseFromStart(int[] localArray, int pivot, int i, int j) {
+        while (i < j && localArray[++i] <= pivot);
+        if (i < j) {
+            localArray[j] = localArray[i];
+        }
+        return i;
+    }
+
+    /**
+     * traverse from the end of the array
+     * look for position element < pivot
+     * @param localArray
+     * @param pivot
+     * @param i
+     * @param j
+     * @return
+     */
+    private int traverseFromEnd(int[] localArray, int pivot, int i, int j) {
+        while (i < j && localArray[--j] >= pivot);
+        if (i < j) {
+            localArray[i] = localArray[j];
+        }
+        return j;
     }
 }

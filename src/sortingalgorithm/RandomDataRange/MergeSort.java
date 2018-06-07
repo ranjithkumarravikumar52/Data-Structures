@@ -3,11 +3,13 @@ package sortingalgorithm.RandomDataRange;
 public class MergeSort extends RandomDataRangeSortAlgorithm{
 
 
-       /*
-    No new arrays is created during splitting phase - logical splitting
-    Not an inplace algorithm
-    O(n*logn)
-    Stable ALgorithm
+    /**
+     *
+     * No new arrays is created during splitting phase - logical splitting
+     * Not an inplace algorithm
+     * O(n*logn)
+     * Stable Algorithm
+     *
      */
     public void mergeSort() {
         int[] localArray = new int[getUnSortedArray().length];
@@ -20,8 +22,14 @@ public class MergeSort extends RandomDataRangeSortAlgorithm{
         setInputArray(localArray);
 
     }
-//end index is always one greater than the last element's index
 
+
+    /**
+     * end index is always one greater than the last element's index
+     * @param array
+     * @param start
+     * @param end
+     */
     private void splitForMergeSort(int[] array, int start, int end) {
         int mid = (start + end) / 2;
 
