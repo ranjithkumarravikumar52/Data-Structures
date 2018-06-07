@@ -28,8 +28,14 @@ public class main {
     }
 
     public static void doAllRandomSizeSorts() {
+
+        //TODO figure out a way to generate a random array and then this array is used by all the sorting algorithms to give us a sense of understanding which sort algorithm is efficient
+
+        //TODO once all the sort algorithms is cleaned, provide a way to implement in JAVA EE
+
         BubbleSort bubble = new BubbleSort();
         bubble.bubbleSort();
+        //TODO this is bad, no one can understand what's this "bubble" object does, on top of it, it hides everything on what's happening
         System.out.println(bubble);
 
         System.out.println();

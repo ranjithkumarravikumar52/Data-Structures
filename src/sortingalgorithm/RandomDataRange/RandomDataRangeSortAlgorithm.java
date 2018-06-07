@@ -20,10 +20,16 @@ import sortingalgorithm.Util.SortAlgorithm;
 
 public abstract class RandomDataRangeSortAlgorithm extends SortAlgorithm {
 
-    private static int[] unSortedArray = ArrayGenerator.getRandomDataRangeArray();
+    //This class can be a medium to be common array that could be used by all the SortAlgorithms
+    private static int[] unSortedArray;
+
+    public RandomDataRangeSortAlgorithm() {
+        unSortedArray = ArrayGenerator.getRandomDataRangeArray();
+    }
 
     public int[] getUnSortedArray() {
         return unSortedArray;
     }
+
 
 }

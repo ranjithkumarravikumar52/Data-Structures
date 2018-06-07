@@ -13,7 +13,7 @@
 	* Radix Sort
 
 #### General Issues
-* 
+* Following inheritance without planning how testing can be done, makes the application untestable or unnecessary difficult to testing
 
 #### Lists
 * ArrayLists

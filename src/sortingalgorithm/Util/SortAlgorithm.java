@@ -18,6 +18,7 @@ public abstract class SortAlgorithm {
 
     private int stepsToSort;
     private int[] inputArray;
+    private int[] outputArray;
 
     public int getStepsToSort() {
         return stepsToSort;
@@ -33,6 +34,14 @@ public abstract class SortAlgorithm {
 
     public void setInputArray(int[] inputArray) {
         this.inputArray = inputArray;
+    }
+
+    public int[] getOutputArray() {
+        return outputArray;
+    }
+
+    public void setOutputArray(int[] outputArray) {
+        this.outputArray = outputArray;
     }
 
     @Override
