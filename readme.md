@@ -13,6 +13,7 @@
 	* Radix Sort
 
 #### Design Principles
+* [What is SRP?](https://www.javabrahman.com/programming-principles/single-responsibility-principle-with-example-in-java/)
 * Before SRP
 ![Before applying SRP](/docs/before srp.png?raw=true before srp)
 * Showing dependencies
