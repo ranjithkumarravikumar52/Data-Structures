@@ -13,7 +13,10 @@
 	* Radix Sort
 
 #### Design Principles
+* Before SRP
 ![Before applying SRP](/docs/before srp.png?raw=true before srp)
+* Showing dependencies
+![dependencies](/docs/dependencies before srp.png?raw=true dependencies before srp)
 * Classes violating SRP
 	* Bubble sort - swap method and bubble sort are two different responsibilities
 	* Selection sort - swap method and bubble sort are two different responsibilities
