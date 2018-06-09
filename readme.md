@@ -12,6 +12,14 @@
 	* Counting Sort
 	* Radix Sort
 
+#### Design Principles
+![Before applying SRP](/docs/before srp.png?raw=true before srp)
+* Classes violating SRP
+	* Bubble sort - swap method and bubble sort are two different responsibilities
+	* Selection sort - swap method and bubble sort are two different responsibilities
+	* Array Generator - generating one for fixed order and other for random order
+* In addition, most methods don't have a return type as this will make testing using JUnit difficult
+
 #### General Issues
 * Following inheritance without planning how testing can be done, makes the application untestable or unnecessary difficult to testing
 
