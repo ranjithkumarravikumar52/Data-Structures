@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>sortingalgorithm.RandomDataRange.BubbleSort</OriginalElement>
+  <nodes>
+    <node x="210.0" y="302.0">sortingalgorithm.FixedDataRange.RadixSort</node>
+    <node x="1138.0" y="335.5">sortingalgorithm.RandomDataRange.MergeSort</node>
+    <node x="517.0" y="357.5">sortingalgorithm.RandomDataRange.InsertionSort</node>
+    <node x="1447.0" y="357.5">sortingalgorithm.RandomDataRange.ShellSort</node>
+    <node x="726.0" y="357.5">sortingalgorithm.RandomDataRange.SelectionSort</node>
+    <node x="0.0" y="357.5">sortingalgorithm.FixedDataRange.CountingSort</node>
+    <node x="0.0" y="554.0">sortingalgorithm.Util.ArrayGenerator</node>
+    <node x="650.0113636363635" y="0.0">sortingalgorithm.Util.SortAlgorithm</node>
+    <node x="1635.0" y="324.5">sortingalgorithm.RandomDataRange.QuickSort</node>
+    <node x="937.0" y="357.5">sortingalgorithm.RandomDataRange.BubbleSort</node>
+    <node x="1041.5" y="168.0">sortingalgorithm.RandomDataRange.RandomDataRangeSortAlgorithm</node>
+    <node x="311.0" y="554.0">sortingalgorithm.Util.SwapElements</node>
+    <node x="119.25" y="168.0">sortingalgorithm.FixedDataRange.FixedDataRangeSortAlgorithm</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="sortingalgorithm.RandomDataRange.SelectionSort" target="sortingalgorithm.RandomDataRange.RandomDataRangeSortAlgorithm">
+      <point x="0.0" y="-48.0" />
+      <point x="821.5" y="272.0" />
+      <point x="1098.25" y="272.0" />
+      <point x="-56.75" y="37.0" />
+    </edge>
+    <edge source="sortingalgorithm.RandomDataRange.InsertionSort" target="sortingalgorithm.RandomDataRange.RandomDataRangeSortAlgorithm">
+      <point x="0.0" y="-48.0" />
+      <point x="611.5" y="262.0" />
+      <point x="1060.4166666666667" y="262.0" />
+      <point x="-94.58333333333326" y="37.0" />
+    </edge>
+    <edge source="sortingalgorithm.FixedDataRange.RadixSort" target="sortingalgorithm.FixedDataRange.FixedDataRangeSortAlgorithm">
+      <point x="0.0" y="-103.5" />
+      <point x="353.5" y="282.0" />
+      <point x="276.75" y="282.0" />
+      <point x="52.5" y="37.0" />
+    </edge>
+    <edge source="sortingalgorithm.RandomDataRange.MergeSort" target="sortingalgorithm.RandomDataRange.RandomDataRangeSortAlgorithm">
+      <point x="0.0" y="-70.0" />
+      <point x="1282.5" y="282.0" />
+      <point x="1173.9166666666667" y="282.0" />
+      <point x="18.916666666666742" y="37.0" />
+    </edge>
+    <edge source="sortingalgorithm.RandomDataRange.ShellSort" target="sortingalgorithm.RandomDataRange.RandomDataRangeSortAlgorithm">
+      <point x="0.0" y="-48.0" />
+      <point x="1531.0" y="272.0" />
+      <point x="1211.75" y="272.0" />
+      <point x="56.75" y="37.0" />
+    </edge>
+    <edge source="sortingalgorithm.RandomDataRange.QuickSort" target="sortingalgorithm.RandomDataRange.RandomDataRangeSortAlgorithm">
+      <point x="0.0" y="-81.0" />
+      <point x="1767.5" y="262.0" />
+      <point x="1249.5833333333333" y="262.0" />
+      <point x="94.58333333333326" y="37.0" />
+    </edge>
+    <edge source="sortingalgorithm.RandomDataRange.BubbleSort" target="sortingalgorithm.RandomDataRange.RandomDataRangeSortAlgorithm">
+      <point x="0.0" y="-48.0" />
+      <point x="1027.5" y="282.0" />
+      <point x="1136.0833333333333" y="282.0" />
+      <point x="-18.916666666666742" y="37.0" />
+    </edge>
+    <edge source="sortingalgorithm.FixedDataRange.CountingSort" target="sortingalgorithm.FixedDataRange.FixedDataRangeSortAlgorithm">
+      <point x="0.0" y="-48.0" />
+      <point x="95.0" y="282.0" />
+      <point x="171.75" y="282.0" />
+      <point x="-52.5" y="37.0" />
+    </edge>
+    <edge source="sortingalgorithm.FixedDataRange.FixedDataRangeSortAlgorithm" target="sortingalgorithm.Util.SortAlgorithm">
+      <point x="0.0" y="-37.0" />
+      <point x="224.25" y="143.0" />
+      <point x="685.5113636363635" y="143.0" />
+      <point x="-35.5" y="59.0" />
+    </edge>
+    <edge source="sortingalgorithm.RandomDataRange.RandomDataRangeSortAlgorithm" target="sortingalgorithm.Util.SortAlgorithm">
+      <point x="0.0" y="-37.0" />
+      <point x="1155.0" y="143.0" />
+      <point x="756.5113636363635" y="143.0" />
+      <point x="35.5" y="59.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.7760416666666666" x="950.0" y="336.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

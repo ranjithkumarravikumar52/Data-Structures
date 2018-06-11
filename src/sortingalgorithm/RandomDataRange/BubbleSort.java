@@ -1,6 +1,6 @@
 package sortingalgorithm.RandomDataRange;
 
-import sortingalgorithm.Util.swappable;
+import sortingalgorithm.Util.SwapElements;
 
 /**
  * Inherits fields from the superclass SortAlgorithm
@@ -9,50 +9,35 @@ import sortingalgorithm.Util.swappable;
  * <li>inputArray - input array to be sorted</li>
  * </ul>
  */
-public class BubbleSort extends RandomDataRangeSortAlgorithm implements swappable {
+public class BubbleSort extends RandomDataRangeSortAlgorithm {
 
-    public BubbleSort() {
-        super();
-        //TODO: make sure that this class instance variables have values instantiated appropriately
+    public BubbleSort(){
+        this.setInputArray(RandomDataRangeSortAlgorithm.getUnSortedArray());
     }
 
-    /**
-     * Worst sorting algorithm
-     * Time complexity: O(n^2)
-     * In-place sorting algorithm
-     */
-    public void bubbleSort() {
-        //TODO this method should return an int array
+    private int[] bubbleSort(int[] inputArray) {
         int stepsToSort = 0;
-        int[] localArray = new int[getUnSortedArray().length];
-        System.arraycopy(getUnSortedArray(), 0, localArray, 0, localArray.length);
+        int[] localArray = new int[inputArray.length];
+        System.arraycopy(inputArray, 0, localArray, 0, localArray.length);
 
         System.out.println("===BUBBLE SORT===");
         for (int lastUnsortedIndex = localArray.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
             for (int i = 0; i < lastUnsortedIndex; i++) {
                 stepsToSort++;
                 if (localArray[i] > localArray[i + 1]) {
-                    swap(localArray, i, i + 1);
+                    stepsToSort = SwapElements.swap(localArray, i, i + 1, stepsToSort);
                 }
             }
         }
 
         setStepsToSort(stepsToSort);
-        setInputArray(localArray);
+        setOutputArray(localArray);
+        return localArray;
     }
 
     @Override
-    public void swap(int[] array, int i, int j) {
-        if (i == j) {
-            return;
-        }
-        int stepsToSort = getStepsToSort();
-        stepsToSort++;
-        int temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-        setStepsToSort(stepsToSort);
+    public int[] sort(int[] inputArray) {
+        int[] outputArray = bubbleSort(inputArray);
+        return outputArray;
     }
-
-
 }

@@ -14,15 +14,19 @@
 
 #### Design Principles
 * [What is SRP?](https://www.javabrahman.com/programming-principles/single-responsibility-principle-with-example-in-java/)
-* Before SRP
-![Before applying SRP](/docs/before srp.png?raw=true before srp)
-* Showing dependencies
+
+#### Showing dependencies before applying design Principles
 ![dependencies](/docs/dependencies before srp.png?raw=true dependencies before srp)
-* Classes violating SRP
-	* Bubble sort - swap method and bubble sort are two different responsibilities
-	* Selection sort - swap method and bubble sort are two different responsibilities
-	* Array Generator - generating one for fixed order and other for random order
+
+#### Classes violating SRP from the above UML diagram
+* Bubble sort - swap method and bubble sort are two different responsibilities
+* Selection sort - swap method and bubble sort are two different responsibilities
+* Array Generator - generating one for fixed order and other for random order
 * In addition, most methods don't have a return type as this will make testing using JUnit difficult
+
+#### After applying design Principles
+![after-design-principles](/docs/after-design-principles.png?raw=true after-design-principles.png)
+
 
 #### General Issues
 * Following inheritance without planning how testing can be done, makes the application untestable or unnecessary difficult to testing. This is due to the violation of SRP and open-closed design principle

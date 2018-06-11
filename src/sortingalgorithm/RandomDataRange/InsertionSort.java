@@ -2,12 +2,14 @@ package sortingalgorithm.RandomDataRange;
 
 public class InsertionSort extends RandomDataRangeSortAlgorithm{
     
+    public InsertionSort(){
+        this.setInputArray(RandomDataRangeSortAlgorithm.getUnSortedArray());
+    }
 
-
-    public void insertionSort() {
+    public int[] insertionSort(int[] inputArray) {
         int stepsToSort = 0;
-        int[] localArray = new int[getUnSortedArray().length];
-        System.arraycopy(getUnSortedArray(), 0, localArray, 0, localArray.length);
+        int[] localArray = new int[inputArray.length];
+        System.arraycopy(inputArray, 0, localArray, 0, localArray.length);
         System.out.println("===INSERTION SORT===");
 
         for (int firstUnsortedIndex = 1; firstUnsortedIndex < localArray.length; firstUnsortedIndex++) {
@@ -23,7 +25,13 @@ public class InsertionSort extends RandomDataRangeSortAlgorithm{
 
         }
         setStepsToSort(stepsToSort);
-        setInputArray(localArray);
+        setOutputArray(localArray);
+        return localArray;
 
+    }
+
+    @Override
+    public int[] sort(int[] inputArray) {
+        return insertionSort(inputArray);
     }
 }
