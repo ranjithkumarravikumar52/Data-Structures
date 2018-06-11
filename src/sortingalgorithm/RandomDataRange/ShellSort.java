@@ -6,14 +6,16 @@
 package sortingalgorithm.RandomDataRange;
 
 /**
- *
  * @author Ranjith
  */
 public class ShellSort extends RandomDataRangeSortAlgorithm {
 
+    public ShellSort() {
+        this.setInputArray(RandomDataRangeSortAlgorithm.getUnSortedArray());
+    }
 
-    public void shellSort() {
-        int[] localArray = new int[getUnSortedArray().length];
+    private int[] shellSort(int[] inputArray) {
+        int[] localArray = new int[inputArray.length];
         System.arraycopy(getUnSortedArray(), 0, localArray, 0, localArray.length);
         System.out.println("===SHELL SORT===");
         int stepsToSort = 0;
@@ -25,21 +27,18 @@ public class ShellSort extends RandomDataRangeSortAlgorithm {
                 while (j >= gap && localArray[j - gap] > newElement) {
                     stepsToSort++;
                     localArray[j] = localArray[j - gap];
-//                  20 35 -15 7 55 1 -22
-//                  20 35 -15 20 55 1 -22
-//                  subtract gap from j
                     j = j - gap;
                 }
                 localArray[j] = newElement;
-                //7 35 -15 20 55 1 -22
             }
         }
         setStepsToSort(stepsToSort);
-        setInputArray(localArray);
+        setOutputArray(localArray);
+        return localArray;
     }
 
     @Override
     public int[] sort(int[] inputArray) {
-        return new int[0];
+        return shellSort(inputArray);
     }
 }

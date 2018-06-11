@@ -1,5 +1,7 @@
 package sortingalgorithm.Main;
 
+import sortingalgorithm.FixedDataRange.CountingSort;
+import sortingalgorithm.FixedDataRange.RadixSort;
 import sortingalgorithm.RandomDataRange.*;
 import sortingalgorithm.Util.SortAlgorithm;
 
@@ -11,15 +13,32 @@ public class App {
 
     public static void main(String[] args) {
 
-        SortAlgorithm[] listArray = {new BubbleSort(), new InsertionSort(), new MergeSort(), new QuickSort(), new SelectionSort()};
-        for(int i = 0; i<listArray.length; i++){
-            randomSortClientModule(listArray[i]);
+        SortAlgorithm[] randomSortList = {new BubbleSort(), new InsertionSort(), new MergeSort(), new QuickSort(), new SelectionSort(), new ShellSort()};
+        for(int i = 0; i<randomSortList.length; i++){
+            randomSortClientModule(randomSortList[i]);
         }
 
+        System.out.println();
+
+        SortAlgorithm[] fixedSortList = {new CountingSort(), new RadixSort()};
+        for(int i = 0; i<fixedSortList.length; i++){
+            fixedSortClientModule(fixedSortList[i]);
+        }
     }
 
     private static void randomSortClientModule(SortAlgorithm sortAlgorithm) {
-        sortAlgorithm.sort(sortAlgorithm.getInputArray());
-        System.out.println(Arrays.toString(sortAlgorithm.getOutputArray()));
+        int[] inputArray = sortAlgorithm.getInputArray();
+        sortAlgorithm.sort(inputArray);
+
+        int[] outputArray = sortAlgorithm.getOutputArray();
+        System.out.println(Arrays.toString(outputArray));
+    }
+
+    private static void fixedSortClientModule(SortAlgorithm sortAlgorithm) {
+        int[] inputArray = sortAlgorithm.getInputArray();
+        sortAlgorithm.sort(inputArray);
+
+        int[] outputArray = sortAlgorithm.getOutputArray();
+        System.out.println(Arrays.toString(outputArray));
     }
 }

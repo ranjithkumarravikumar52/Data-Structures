@@ -1,12 +1,16 @@
 package sortingalgorithm.FixedDataRange;
 
 public class CountingSort extends FixedDataRangeSortAlgorithm {
-    
-    public void countingSort() {
+
+    public CountingSort() {
+        this.setInputArray(FixedDataRangeSortAlgorithm.getUnSortedArray());
+    }
+
+    private int[] countingSort(int[] inputArray) {
         //accessing array variable from FixedDataRangeSortAlgorithm
-        int[] localArray = new int[getUnSortedArray().length];
-        System.arraycopy(getUnSortedArray(), 0, localArray, 0, localArray.length);
-        
+        int[] localArray = new int[inputArray.length];
+        System.arraycopy(inputArray, 0, localArray, 0, localArray.length);
+
         int[] countingArray = new int[10];
         System.out.println("===COUNTING SORT===");
         setStepsToSort(0);
@@ -15,10 +19,10 @@ public class CountingSort extends FixedDataRangeSortAlgorithm {
         for (int i = 0; i < localArray.length; i++) {
             countingArray[localArray[i] - 1]++; //how to calculate for different mins and max values? 
         }
-        
+
         //how this could work for different min and max values instead of min=1
         //sorting elements based on the counting array
-        int j=0;
+        int j = 0;
         for (int i = 0; i < countingArray.length; i++) {
             if (countingArray[i] != 0) {
 //                int count = countingArray[i];
@@ -27,13 +31,14 @@ public class CountingSort extends FixedDataRangeSortAlgorithm {
                 }
             }
         }
-        
-        setInputArray(localArray);
+
+        setOutputArray(localArray);
+        return localArray;
 
     }
 
     @Override
     public int[] sort(int[] inputArray) {
-        return new int[0];
+        return countingSort(inputArray);
     }
 }
