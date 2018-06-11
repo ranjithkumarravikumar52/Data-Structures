@@ -13,6 +13,7 @@
 	* Radix Sort
 
 #### Design Principles
+* [What is SRP?](https://www.javabrahman.com/programming-principles/single-responsibility-principle-with-example-in-java/)
 * Before SRP
 ![Before applying SRP](/docs/before srp.png?raw=true before srp)
 * Showing dependencies
@@ -24,7 +25,7 @@
 * In addition, most methods don't have a return type as this will make testing using JUnit difficult
 
 #### General Issues
-* Following inheritance without planning how testing can be done, makes the application untestable or unnecessary difficult to testing
+* Following inheritance without planning how testing can be done, makes the application untestable or unnecessary difficult to testing. This is due to the violation of SRP and open-closed design principle
 
 #### Lists
 * ArrayLists
