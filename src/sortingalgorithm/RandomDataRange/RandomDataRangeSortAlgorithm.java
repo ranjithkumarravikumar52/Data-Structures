@@ -21,15 +21,9 @@ import sortingalgorithm.Util.SortAlgorithm;
 public abstract class RandomDataRangeSortAlgorithm extends SortAlgorithm {
 
     //This class can be a medium to be common array that could be used by all the SortAlgorithms
-    private static int[] unSortedArray;
+    private static int[] unSortedArray = ArrayGenerator.getRandomDataRangeArray();
 
-    public RandomDataRangeSortAlgorithm() {
-        unSortedArray = ArrayGenerator.getRandomDataRangeArray();
-    }
-
-    public int[] getUnSortedArray() {
+    public static int[] getUnSortedArray() {
         return unSortedArray;
     }
-
-
 }

@@ -1,20 +1,18 @@
 package sortingalgorithm.Util;
 
-import java.util.Arrays;
-
 /**
  * <p>Every Sort Algorithm is imagined as a Class. This class has two fields mandatory for any SortAlgorithm.</p>
  * <ul>
- *     <li>stepsToSort - steps to sort any given array, the measurement of steps is defined in the sorting algorithm implementation.</li>
- *     <li>inputArray - input array to be sorted</li>
+ * <li>stepsToSort - steps to sort any given array, the measurement of steps is defined in the sorting algorithm implementation.</li>
+ * <li>inputArray - input array to be sorted</li>
  * </ul>
  * <p>The children of this class are: </p>
  * <ul>
- *     <li>Random Data Range</li>
- *     <li>Fixed Data Range</li>
+ * <li>Random Data Range</li>
+ * <li>Fixed Data Range</li>
  * </ul>
  */
-public abstract class SortAlgorithm {
+abstract public class SortAlgorithm {
 
     private int stepsToSort;
     private int[] inputArray;
@@ -44,9 +42,6 @@ public abstract class SortAlgorithm {
         this.outputArray = outputArray;
     }
 
-    @Override
-    public String toString() {
-        return Arrays.toString(getInputArray()) + "\n"
-                + "Total Steps to sort: " + getStepsToSort();
-    }
+    public abstract int[] sort(int[] inputArray);
+
 }
