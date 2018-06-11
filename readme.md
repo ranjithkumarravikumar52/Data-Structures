@@ -16,7 +16,7 @@
 * [What is SRP?](https://www.javabrahman.com/programming-principles/single-responsibility-principle-with-example-in-java/)
 
 #### Showing dependencies before applying design Principles
-![dependencies before srp](/docs/dependencies before srp.png?raw=true "dependencies before srp.png")
+![dependencies before srp](/docs/dependencies-before-srp.png?raw=true "dependencies-before-srp.png")
 
 #### Classes violating SRP from the above UML diagram
 * Bubble sort - swap method and bubble sort are two different responsibilities
