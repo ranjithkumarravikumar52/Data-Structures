@@ -95,4 +95,8 @@ public class RadixSort extends FixedDataRangeSortAlgorithm {
 		return unSortedArray;
 	}
 
+	@Override
+	public int[] sort(int[] inputArray) {
+		return new int[0];
+	}
 }

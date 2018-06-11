@@ -68,4 +68,9 @@ public class QuickSort extends RandomDataRangeSortAlgorithm {
         }
         return j;
     }
+
+    @Override
+    public int[] sort(int[] inputArray) {
+        return new int[0];
+    }
 }

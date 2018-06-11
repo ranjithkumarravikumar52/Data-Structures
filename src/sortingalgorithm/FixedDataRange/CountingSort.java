@@ -32,4 +32,8 @@ public class CountingSort extends FixedDataRangeSortAlgorithm {
 
     }
 
+    @Override
+    public int[] sort(int[] inputArray) {
+        return new int[0];
+    }
 }

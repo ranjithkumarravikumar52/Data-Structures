@@ -85,4 +85,9 @@ public class MergeSort extends RandomDataRangeSortAlgorithm{
         System.arraycopy(tempArray, 0, array, 0 + start, end - start);
 
     }
+
+    @Override
+    public int[] sort(int[] inputArray) {
+        return new int[0];
+    }
 }

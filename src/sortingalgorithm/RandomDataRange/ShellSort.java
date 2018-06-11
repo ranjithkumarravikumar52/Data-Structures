@@ -37,4 +37,9 @@ public class ShellSort extends RandomDataRangeSortAlgorithm {
         setStepsToSort(stepsToSort);
         setInputArray(localArray);
     }
+
+    @Override
+    public int[] sort(int[] inputArray) {
+        return new int[0];
+    }
 }

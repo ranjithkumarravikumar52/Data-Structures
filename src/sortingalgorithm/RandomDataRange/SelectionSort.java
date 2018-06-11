@@ -5,18 +5,19 @@
  */
 package sortingalgorithm.RandomDataRange;
 
-import sortingalgorithm.Util.swappable;
+import sortingalgorithm.Util.SwapElements;
 
 /**
  *
  * @author Ranjith
  */
-public class SelectionSort extends RandomDataRangeSortAlgorithm implements swappable {
+public class SelectionSort extends RandomDataRangeSortAlgorithm  {
 
 
-    public void selectionSort() {
-        int[] localArray = new int[getUnSortedArray().length];
-        System.arraycopy(getUnSortedArray(), 0, localArray, 0, localArray.length);
+    public int[] selectionSort() {
+        int[] inputArray = getUnSortedArray();
+        int[] localArray = new int[inputArray.length];
+        System.arraycopy(inputArray, 0, localArray, 0, localArray.length);
         System.out.println("===SELECTION SORT===");
         
         int stepsToSort = 0;
@@ -28,21 +29,16 @@ public class SelectionSort extends RandomDataRangeSortAlgorithm implements swapp
                     maxIndex = arrayIndex;
                 }
             }
-            swap(localArray, lastUnsortedIndex, maxIndex);
+            stepsToSort = SwapElements.swap(localArray, lastUnsortedIndex, maxIndex, stepsToSort);
         }
         setStepsToSort(stepsToSort);
-        setInputArray(localArray);
+        setOutputArray(localArray);
+        return localArray;
     }
 
-    public void swap(int[] array, int i, int j) {
-        if (i == j) {
-            return;
-        }
-        int stepsToSort = getStepsToSort();
-        stepsToSort++;
-        int temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-        setStepsToSort(stepsToSort);
+    @Override
+    public int[] sort(int[] inputArray) {
+        int[] outputArray = selectionSort();
+        return outputArray;
     }
 }
