@@ -26,7 +26,7 @@ public class ArrayGenerator {
         for (int i = 0; i < fixedArray.length; i++) {
             fixedArray[i] = rand.nextInt(max - min) + min;
         }
-        System.out.println("Given fixed - unsorted Array:\n" + Arrays.toString(fixedArray) + "\n");
+//        System.out.println("Given fixed - unsorted Array:\n" + Arrays.toString(fixedArray) + "\n");
         return fixedArray;
 
     }

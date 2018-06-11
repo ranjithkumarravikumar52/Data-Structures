@@ -1,5 +1,7 @@
 package sortingalgorithm.FixedDataRange;
 
+import java.util.Arrays;
+
 public class CountingSort extends FixedDataRangeSortAlgorithm {
 
     public CountingSort() {
@@ -39,6 +41,7 @@ public class CountingSort extends FixedDataRangeSortAlgorithm {
 
     @Override
     public int[] sort(int[] inputArray) {
+        System.out.println("Input array for the counting sort:\n"+ Arrays.toString(this.getInputArray()));
         return countingSort(inputArray);
     }
 }

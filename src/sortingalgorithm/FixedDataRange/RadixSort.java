@@ -29,6 +29,7 @@ public class RadixSort extends FixedDataRangeSortAlgorithm {
         radix = 10; // decimal system
         int[] inputArray = getIntegerArrayRadixSort(numElements, width, radix);
         this.setInputArray(inputArray);
+
     }
 
     /**
@@ -102,6 +103,7 @@ public class RadixSort extends FixedDataRangeSortAlgorithm {
 
     @Override
     public int[] sort(int[] inputArray) {
+        System.out.println("Input array for the radix sort:\n"+ Arrays.toString(inputArray));
         int[] ints = radixSortIntegers(inputArray);
         this.setOutputArray(ints);
         return ints;
