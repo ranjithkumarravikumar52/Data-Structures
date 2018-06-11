@@ -2,14 +2,18 @@ package sortingalgorithm.RandomDataRange;
 
 public class QuickSort extends RandomDataRangeSortAlgorithm {
 
+    public QuickSort() {
+        this.setInputArray(RandomDataRangeSortAlgorithm.getUnSortedArray());
+    }
 
-    public void quickSort() {
-        int[] localArray = new int[getUnSortedArray().length];
+    public int[] quickSort(int[] inputArray) {
+        int[] localArray = new int[inputArray.length];
         System.arraycopy(getUnSortedArray(), 0, localArray, 0, localArray.length);
 //        int[] localArray = {20, 35, -15, 7, 55, 1, -22};
         System.out.println("===QUICK SORT===");
         doQuickSort(localArray, 0, localArray.length);
-        setInputArray(localArray);
+        setOutputArray(localArray);
+        return localArray;
     }
 
 
@@ -71,6 +75,6 @@ public class QuickSort extends RandomDataRangeSortAlgorithm {
 
     @Override
     public int[] sort(int[] inputArray) {
-        return new int[0];
+        return quickSort(inputArray);
     }
 }

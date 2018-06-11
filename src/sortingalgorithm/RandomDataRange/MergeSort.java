@@ -1,31 +1,36 @@
 package sortingalgorithm.RandomDataRange;
 
-public class MergeSort extends RandomDataRangeSortAlgorithm{
+public class MergeSort extends RandomDataRangeSortAlgorithm {
 
+
+    public MergeSort() {
+        this.setInputArray(RandomDataRangeSortAlgorithm.getUnSortedArray());
+    }
 
     /**
-     *
      * No new arrays is created during splitting phase - logical splitting
      * Not an inplace algorithm
      * O(n*logn)
      * Stable Algorithm
-     *
      */
-    public void mergeSort() {
-        int[] localArray = new int[getUnSortedArray().length];
+    //TODO change the sort to increasing order
+    public int[] mergeSort(int[] inputArray) {
+        int[] localArray = new int[inputArray.length];
         System.arraycopy(getUnSortedArray(), 0, localArray, 0, localArray.length);
         System.out.println("===MERGE SORT===");
         int start = 0;
         int end = localArray.length;
 
         splitForMergeSort(localArray, start, end);
-        setInputArray(localArray);
+        this.setOutputArray(localArray);
+        return localArray;
 
     }
 
 
     /**
      * end index is always one greater than the last element's index
+     *
      * @param array
      * @param start
      * @param end
@@ -50,26 +55,12 @@ public class MergeSort extends RandomDataRangeSortAlgorithm{
         int tempIndex = 0;
         int[] tempArray = new int[end - start];
         while (i < mid && j < end) {
-//            if (array[i] > array[j]) {
-//                //put array[j] into the new array
-//                tempArray[tempIndex++] = array[j++];
-//            } else {
-//                tempArray[tempIndex++] = array[i++];
-//            }
-            //tempArray[tempIndex++] = array[i] <= array[j] ? array[i++] : array[j++];
             tempArray[tempIndex++] = array[i] >= array[j] ? array[i++] : array[j++];
             int stepsToSort = getStepsToSort();
             stepsToSort++;
             setStepsToSort(stepsToSort);
         }
 
-        //addressing strangler elements (left over elements in either of sub arrays)
-//        while (i < mid) {
-//            tempArray[tempIndex++] = array[i++];
-//        }
-//        while (j < end) {
-//            tempArray[tempIndex++] = array[j++];
-//        }
         while (j < end) {
             tempArray[tempIndex++] = array[j++];
         }
@@ -77,17 +68,13 @@ public class MergeSort extends RandomDataRangeSortAlgorithm{
             tempArray[tempIndex++] = array[i++];
         }
 
-//        copying back into the given array
-//        tempIndex = 0;
-//        for( i = start; i < end; i++){
-//            array[i] = tempArray[tempIndex++];
-//        }
+
         System.arraycopy(tempArray, 0, array, 0 + start, end - start);
 
     }
 
     @Override
     public int[] sort(int[] inputArray) {
-        return new int[0];
+        return mergeSort(inputArray);
     }
 }
