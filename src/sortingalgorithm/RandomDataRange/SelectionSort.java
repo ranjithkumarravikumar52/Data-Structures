@@ -13,9 +13,11 @@ import sortingalgorithm.Util.SwapElements;
  */
 public class SelectionSort extends RandomDataRangeSortAlgorithm  {
 
+    public SelectionSort() {
+        this.setInputArray(RandomDataRangeSortAlgorithm.getUnSortedArray());
+    }
 
-    public int[] selectionSort() {
-        int[] inputArray = getUnSortedArray();
+    private int[] selectionSort(int[] inputArray) {
         int[] localArray = new int[inputArray.length];
         System.arraycopy(inputArray, 0, localArray, 0, localArray.length);
         System.out.println("===SELECTION SORT===");
@@ -38,7 +40,7 @@ public class SelectionSort extends RandomDataRangeSortAlgorithm  {
 
     @Override
     public int[] sort(int[] inputArray) {
-        int[] outputArray = selectionSort();
+        int[] outputArray = selectionSort(inputArray);
         return outputArray;
     }
 }
