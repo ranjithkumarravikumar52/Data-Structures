@@ -17,7 +17,6 @@
 
 #### Showing dependencies before applying design Principles
 ![dependencies before srp](/docs/dependencies before srp.png?raw=true "dependencies before srp.png")
-![dependencies](/docs/dependencies before srp.png?raw=true "dependencies before srp.png")
 
 #### Classes violating SRP from the above UML diagram
 * Bubble sort - swap method and bubble sort are two different responsibilities
